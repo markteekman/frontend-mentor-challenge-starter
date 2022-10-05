@@ -1,10 +1,9 @@
 ---
 import '../assets/scss/globals.scss'
-import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 
-const {title} = Astro.props
-let subtitle = 'Accessible Astro Starter'
+const { title } = Astro.props
+let subtitle = 'PROJECT NAME'
 ---
 
 <html lang="en" dir="ltr">
@@ -14,7 +13,7 @@ let subtitle = 'Accessible Astro Starter'
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="/favicon.png">
 
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,17 +21,16 @@ let subtitle = 'Accessible Astro Starter'
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 
     <!-- open graph -->
-    <meta property="og:title" content="Accessible Astro Starter">
-    <meta property="og:description" content="A starter project with accessible features using Astro static site builder. Contains accessible landmarks, skip links, a dark mode color scheme, better focus outline and keyboard menu navigation.">
+    <meta property="og:title" content="PROJECT NAME">
+    <meta property="og:description" content="PROJECT DESCRIPTION">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://starter.accessible-astro.dev">
+    <meta property="og:url" content="https://markteekman.github.io/">
     <meta property="og:image" content="/social-preview-image.png">
 
     <!-- page title -->
     <title>{title} - {subtitle}</title>
   </head>
   <body>
-    <Header />
     <main id="main-content">
       <slot />
     </main>
@@ -41,7 +39,21 @@ let subtitle = 'Accessible Astro Starter'
 </html>
 
 <style lang="scss">
-  // sticky footer on low content pages
+  :root {
+    // base colors
+    --font-family-default: "Open Sans", sans-serif;
+    --font-family-special: "Open Sans", sans-serif;
+    --font-color: var(--neutral-900);
+    --background: var(--neutral-100);
+    --action-color: var(--secondary-500);
+    // theme colors
+    --color-light-cyan: hsl(193, 38%, 86%);
+    --color-neon-green: hsl(150, 100%, 66%);
+    --color-grayish-blue: hsl(217, 19%, 38%);
+    --color-dark-grayish-blue: hsl(217, 19%, 24%);
+    --color-dark-blue: hsl(218, 23%, 16%);
+  }
+
   html,
   body {
     height: 100%;
