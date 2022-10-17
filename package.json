@@ -12,10 +12,15 @@
   },
   "dependencies": {
     "accessible-astro-components": "^1.5.6",
-    "astro-icon": "^0.7.3"
+    "astro-icon": "^0.7.3",
+    "astro-imagetools": "^0.6.11",
+    "tailwindcss": "^3.1.8"
   },
   "devDependencies": {
+    "@astrojs/tailwind": "^2.1.0",
     "astro": "^1.4.4",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
     "sass": "^1.49.9"
   }
 }
