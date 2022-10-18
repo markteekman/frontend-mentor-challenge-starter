@@ -3,7 +3,7 @@ import tailwind from '@astrojs/tailwind'
 
 // https://astro.build/config
 export default defineConfig({
+  integrations: [tailwind()],
   site: 'https://markteekman.github.io',
-  base: '/frontend-mentor-challenge-starter',
-  integrations: [tailwind()]
+  base: '/frontend-mentor-challenge-starter'
 })
