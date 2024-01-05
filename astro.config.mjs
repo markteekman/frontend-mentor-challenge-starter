@@ -11,4 +11,6 @@ export default defineConfig({
     }),
     compress(),
   ],
+  site: 'https://markteekman.github.io',
+  base: '/frontend-mentor-challenge-starter',
 })
