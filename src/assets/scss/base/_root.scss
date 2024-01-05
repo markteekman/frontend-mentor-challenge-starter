@@ -2,16 +2,93 @@
 // | Root
 // | -------------------------------------------------------------
 
-@use "color" as *;
-
 :root {
-  @each $color, $shades in $colors {
-    @each $shade, $value in $shades {
-      --#{$color}-#{$shade}: #{$value};
-    }
-  }
-  --radius-small: 3px;
-  --radius-large: 6px;
-  --gap-default: 2rem;
-  --font-measure: 70ch;
+  --color-primary-100: hsl(272deg 100% 65% / 1);
+  --color-primary-200: hsl(272deg 100% 50% / 1);
+  --color-secondary-100: hsl(172deg 88% 63% / 1);
+  --color-secondary-200: hsl(172deg 88% 33% / 1);
+  --color-tertiary-100: hsl(40deg 100% 65% / 1);
+  --color-tertiary-200: hsl(40deg 100% 50% / 1);
+  --color-white: hsl(0deg 0% 100% / 1);
+  --color-gray-50: hsl(210deg 19% 10% / 1);
+  --color-gray-100: hsl(210deg 15% 20% / 1);
+  --color-gray-200: hsl(210deg 15% 25% / 1);
+  --color-gray-300: hsl(210deg 10% 40% / 1);
+  --color-gray-400: hsl(210deg 9% 45% / 1);
+  --color-gray-500: hsl(210deg 8% 50% / 1);
+  --color-gray-600: hsl(210deg 12% 55% / 1);
+  --color-gray-700: hsl(210deg 14% 66% / 1);
+  --color-gray-800: hsl(210deg 20% 77% / 1);
+  --color-gray-900: hsl(210deg 25% 88% / 1);
+  --color-gray-1000: hsl(210deg 25% 99% / 1);
+  --color-success: hsl(123deg 77% 58% / 1);
+  --color-warning: var(--color-tertiary-100);
+  --color-error: hsl(0deg 100% 50% / 1);
+  --color-contrast-white: hsl(0deg 0% 100% / 1);
+  --color-contrast-black: hsl(0deg 0% 0% / 1);
+  --color-contrast-darkblue: hsl(240deg 100% 47% / 1);
+  --color-contrast-lightblue: hsl(200deg 100% 60% / 1);
+
+  // font families
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+
+  // font sizes
+  --font-size--2: clamp(0.6944rem, 0.6855rem + 0.0446vw, 0.72rem);
+  --font-size--1: clamp(0.8331rem, 0.8099rem + 0.1163vw, 0.9rem);
+  --font-size-0: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
+  --font-size-1: clamp(1.2rem, 1.1283rem + 0.3587vw, 1.4063rem);
+  --font-size-2: clamp(1.44rem, 1.3293rem + 0.5533vw, 1.7581rem);
+  --font-size-3: clamp(1.7281rem, 1.5649rem + 0.8163vw, 2.1975rem);
+  --font-size-4: clamp(2.0738rem, 1.8396rem + 1.1707vw, 2.7469rem);
+  --font-size-5: clamp(2.4881rem, 2.1594rem + 1.6435vw, 3.4331rem);
+  --font-size-6: clamp(2.9863rem, 2.5323rem + 2.2696vw, 4.2913rem);
+
+  // space
+  --space-3xs: clamp(0.25rem, 0.2283rem + 0.1087vw, 0.3125rem);
+  --space-2xs: clamp(0.5rem, 0.4783rem + 0.1087vw, 0.5625rem);
+  --space-xs: clamp(0.75rem, 0.7065rem + 0.2174vw, 0.875rem);
+  --space-s: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
+  --space-m: clamp(1.5rem, 1.4348rem + 0.3261vw, 1.6875rem);
+  --space-l: clamp(2rem, 1.913rem + 0.4348vw, 2.25rem);
+  --space-xl: clamp(3rem, 2.8696rem + 0.6522vw, 3.375rem);
+  --space-2xl: clamp(4rem, 3.8261rem + 0.8696vw, 4.5rem);
+  --space-3xl: clamp(6rem, 5.7391rem + 1.3043vw, 6.75rem);
+  --space-3xs-2xs: clamp(0.25rem, 0.1413rem + 0.5435vw, 0.5625rem);
+  --space-2xs-xs: clamp(0.5rem, 0.3696rem + 0.6522vw, 0.875rem);
+  --space-xs-s: clamp(0.75rem, 0.6196rem + 0.6522vw, 1.125rem);
+  --space-s-m: clamp(1rem, 0.7609rem + 1.1957vw, 1.6875rem);
+  --space-m-l: clamp(1.5rem, 1.2391rem + 1.3043vw, 2.25rem);
+  --space-l-xl: clamp(2rem, 1.5217rem + 2.3913vw, 3.375rem);
+  --space-xl-2xl: clamp(3rem, 2.4783rem + 2.6087vw, 4.5rem);
+  --space-2xl-3xl: clamp(4rem, 3.0435rem + 4.7826vw, 6.75rem);
+
+  // grid
+  --grid-max-width: 90rem;
+  --grid-gutter: var(--space-s-l, clamp(1.125rem, 0.6467rem + 2.3913vw, 2.5rem));
+  --grid-columns: 12;
+
+  // border radius
+  --radius-s: 0.25rem;
+  --radius-m: 0.5rem;
+  --radius-l: 0.75rem;
+  --radius-h: 1rem;
+
+  // elevations
+  --elevation-1: 0 1px 3px rgba(0 0 0 / 0.12);
+  --elevation-2: 0 3px 6px rgba(0 0 0 / 0.15);
+  --elevation-3: 0 10px 20px rgba(0 0 0 / 0.15);
+  --elevation-4: 0 15px 25px rgba(0 0 0 / 0.15);
+  --elevation-5: 0 20px 40px rgba(0 0 0 / 0.5);
+
+  // animations
+  --cubic-bezier: cubic-bezier(0.1, 0.1, 0, 1);
+  --animation-speed-slow: 0.6s;
+  --animation-speed-medium: 0.4s;
+  --animation-speed-fast: 0.25s;
+
+  // misc
+  --line-clamp: 3;
+  --target-size-min: 24px;
+  --target-size-max: 44px;
 }

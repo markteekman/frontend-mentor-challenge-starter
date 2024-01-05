@@ -1,9 +1,14 @@
 import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
+import compress from 'astro-compress'
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind()],
-  site: 'https://markteekman.github.io',
-  base: '/frontend-mentor-challenge-starter'
+  compressHTML: true,
+  integrations: [
+    tailwind({
+      applyBaseStyles: false,
+    }),
+    compress(),
+  ],
 })
